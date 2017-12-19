@@ -5,6 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { SearchPage } from '../pages/search/search';
+import { ChoosePage } from '../pages/choose/choose';
+import { TripPage } from '../pages/trip/trip';
+import { PaymentPage } from '../pages/payment/payment';
+import { HistoryPage } from '../pages/history/history';
+import { SupportPage } from '../pages/support/support';
+import { ProfilePage } from '../pages/profile/profile';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { ContactPage } from '../pages/contact/contact';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +33,19 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Welcome', component:	WelcomePage  },
+      { title: 'Search', component:	SearchPage  },
+      { title: 'Choose', component:	ChoosePage  },
+      { title: 'Trip', component:	TripPage  },
+      { title: 'Payment', component:	PaymentPage  },
+      { title: 'History', component:	HistoryPage  },
+      { title: 'Support', component:	SupportPage  },
+      { title: 'Profile', component:	ProfilePage  },
+      { title: 'Login', component:	LoginPage  },
+      { title: 'Signup', component:	SignupPage  },
+      { title: 'Contact', component:	ContactPage  }
+            
     ];
 
   }
