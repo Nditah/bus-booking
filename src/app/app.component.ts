@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { SearchPage } from '../pages/search/search';
 import { ChoosePage } from '../pages/choose/choose';
@@ -25,26 +24,25 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Welcome', component:	WelcomePage  },
-      { title: 'Search', component:	SearchPage  },
-      { title: 'Choose', component:	ChoosePage  },
-      { title: 'Trip', component:	TripPage  },
-      { title: 'Payment', component:	PaymentPage  },
-      { title: 'History', component:	HistoryPage  },
-      { title: 'Support', component:	SupportPage  },
-      { title: 'Profile', component:	ProfilePage  },
-      { title: 'Login', component:	LoginPage  },
-      { title: 'Signup', component:	SignupPage  },
-      { title: 'Contact', component:	ContactPage  }
+      { title: 'Home', component: HomePage, icon: 'home' },
+      { title: 'Welcome', component:	WelcomePage, icon: 'home'  },
+      { title: 'Search', component:	SearchPage, icon: 'bus'  },
+      { title: 'Choose', component:	ChoosePage, icon: 'checkbox'  },
+      { title: 'Trip', component:	TripPage, icon: 'git-compare'  },
+      { title: 'Payment', component:	PaymentPage, icon: 'cash'  },
+      { title: 'History', component:	HistoryPage, icon: 'book'  },
+      { title: 'Support', component:	SupportPage, icon: 'help-circle'  },
+      { title: 'Profile', component:	ProfilePage, icon: 'contact'  },
+      { title: 'Login', component:	LoginPage, icon: 'download'  },
+      { title: 'Signup', component:	SignupPage, icon: 'create'  },
+      { title: 'Contact', component:	ContactPage, icon: 'call'  }
             
     ];
 
