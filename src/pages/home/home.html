@@ -5,13 +5,53 @@
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
-</ion-header> 
+</ion-header>
 
-<ion-content padding>
-  <h3>PMT Booking</h3>
-  
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content padding class="appBackground">
+  <ion-card>
+    <ion-card-header>
+      PMT Booking
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Travelling From</ion-label>
+          <ion-input type="text" placeholder="Departure Terminal" name="terminal1"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Travelling To</ion-label>
+          <ion-input type="text" placeholder="Arrival Terminal" name="terminal1"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Departing On</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" name="departing_date"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Trip</ion-label>
+          <ion-select name="trip">
+            <ion-option value="1">One-Way</ion-option>
+            <ion-option value="2">Two-Way</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Returning On</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" name="returning_date"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Travellers</ion-label>
+          <ion-input type="text" placeholder="No. of Seats" name="seats"></ion-input>
+        </ion-item>
+
+        <button ion-button full color="success" (click)="search()">Search</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
   <button ion-button color="primary" (click)="logout()">Logout</button>
-
 </ion-content>

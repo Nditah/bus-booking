@@ -15,70 +15,112 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
+
         <ion-item>
-          <ion-label stacked>Surname</ion-label>
+          <ion-label floating>Surname</ion-label>
           <ion-input type="text" [(ngModel)]="userData.surname"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Other Name</ion-label>
+          <ion-label floating>Other Name</ion-label>
           <ion-input type="text" [(ngModel)]="userData.other_name"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Gender</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.sex"></ion-input>
+          <ion-label floating>Gender</ion-label>
+          <ion-select [(ngModel)]="userData.sex">
+            <ion-option value="M">Male</ion-option>
+            <ion-option value="F">Female</ion-option>
+          </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Birth date</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.birth_date"></ion-input>
+          <ion-label floating>Date of Birth</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="userData.birth_date"></ion-datetime>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Phone</ion-label>
+          <ion-label floating>Phone</ion-label>
           <ion-input type="text" [(ngModel)]="userData.phone"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Phone-2</ion-label>
+          <ion-label floating>Phone-2</ion-label>
           <ion-input type="text" [(ngModel)]="userData.phone2"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Address</ion-label>
+          <ion-label floating>Address</ion-label>
           <ion-input type="text" [(ngModel)]="userData.address"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>City</ion-label>
+          <ion-label floating>City</ion-label>
           <ion-input type="text" [(ngModel)]="userData.city"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>State</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.state"></ion-input>
+          <ion-label floating>State</ion-label>
+          <ion-select [(ngModel)]="userData.state">
+            <ion-option value='1'>ABIA STATE </ion-option>
+            <ion-option value='2'>ADAMAWA STATE </ion-option>
+            <ion-option value='3'>AKWA IBOM STATE </ion-option>
+            <ion-option value='4'>ANAMBRA STATE </ion-option>
+            <ion-option value='5'>BAUCHI STATE </ion-option>
+            <ion-option value='6'>BAYELSA STATE </ion-option>
+            <ion-option value='7'>BENUE STATE </ion-option>
+            <ion-option value='8'>BORNO STATE </ion-option>
+            <ion-option value='9'>CROSS RIVER STATE </ion-option>
+            <ion-option value='10'>DELTA STATE </ion-option>
+            <ion-option value='11'>EBONYI STATE </ion-option>
+            <ion-option value='12'>EDO STATE </ion-option>
+            <ion-option value='13'>EKITI STATE </ion-option>
+            <ion-option value='14'>ENUGU STATE </ion-option>
+            <ion-option value='15'>FCT </ion-option>
+            <ion-option value='16'>GOMBE STATE </ion-option>
+            <ion-option value='17'>IMO STATE </ion-option>
+            <ion-option value='18'>JIGAWA STATE </ion-option>
+            <ion-option value='19'>KADUNA STATE </ion-option>
+            <ion-option value='20'>KANO STATE </ion-option>
+            <ion-option value='21'>KATSINA STATE </ion-option>
+            <ion-option value='22'>KEBBI STATE </ion-option>
+            <ion-option value='23'>KOGI STATE </ion-option>
+            <ion-option value='24'>KWARA STATE </ion-option>
+            <ion-option value='25'>LAGOS STATE </ion-option>
+            <ion-option value='26'>NASARAWA STATE </ion-option>
+            <ion-option value='27'>NIGER STATE </ion-option>
+            <ion-option value='28'>OGUN STATE </ion-option>
+            <ion-option value='29'>ONDO STATE </ion-option>
+            <ion-option value='30'>OSUN STATE </ion-option>
+            <ion-option value='31'>OYO STATE </ion-option>
+            <ion-option value='32'>PLATEAU STATE </ion-option>
+            <ion-option value='33'>RIVERS STATE </ion-option>
+            <ion-option value='34'>SOKOTO STATE </ion-option>
+            <ion-option value='35'>TARABA STATE </ion-option>
+            <ion-option value='36'>YOBE STATE </ion-option>
+            <ion-option value='37'>ZAMFARA STATE </ion-option>
+          </ion-select>
         </ion-item>
 
         <ion-input type="hidden" [(ngModel)]="userData.product"></ion-input>
 
         <ion-item>
-          <ion-label stacked>Next-of-Kin</ion-label>
+          <ion-label floating>Next-of-Kin</ion-label>
           <ion-input type="text" [(ngModel)]="userData.person"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Kin's Phone</ion-label>
+          <ion-label floating>Kin's Phone</ion-label>
           <ion-input type="text" [(ngModel)]="userData.person_phone"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Email</ion-label>
+          <ion-label floating>Email</ion-label>
           <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Password</ion-label>
+          <ion-label floating>Password</ion-label>
           <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
         </ion-item>
 

@@ -7,10 +7,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Sign-in</h3>
-
-
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+<ion-content padding class="appBackground">
+    <ion-card>
+      <ion-card-header>
+        Sign-in
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+  
+          <ion-item>
+            <ion-label stacked>Username</ion-label>
+            <ion-input type="text" placeholder="Email or Phone" name="username"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password" placeholder="*********" name="password"></ion-input>
+          </ion-item>
+  
+          <button ion-button full color="success" (click)="login()">Login</button>
+          <a href="#" (click)="signup()">Register</a>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

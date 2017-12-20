@@ -7,10 +7,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Support and Faqs</h3>
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.title}}
+    </button>
+  </ion-list>
 
+  <h4>FAQs:</h4>
+  <ion-item *ngFor="let accordion of accordions; let i = index" [title]="accordion.name" textColor="#DDD" hasMargin="false" headerColor="#F53D3D" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+    <div *ngIf="isGroupShown(i)">
+      <img [src]="accordion.imageUrl">
+      <p text-wrap>{{accordion.description}}</p>
+    </div>
+  </ion-item>
 
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

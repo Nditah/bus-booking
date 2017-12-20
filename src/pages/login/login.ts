@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home'; 
+import { SignupPage } from '../signup/signup'; 
 
 @IonicPage()
 @Component({
@@ -20,5 +21,11 @@ export class LoginPage {
     // Your app login API web service call triggers 
     this.navCtrl.push(HomePage, {}, {animate: false});
   }
+
+  signup() {
+    //Signup page link
+    this.navCtrl.push(SignupPage);
+  }
+
 
 }

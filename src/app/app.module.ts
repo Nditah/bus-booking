@@ -7,7 +7,6 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { SearchPage } from '../pages/search/search';
 import { ChoosePage } from '../pages/choose/choose';
 import { TripPage } from '../pages/trip/trip';
 import { PaymentPage } from '../pages/payment/payment';
@@ -32,7 +31,6 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WelcomePage,
-    SearchPage,
     ChoosePage,
     TripPage,
     PaymentPage,
@@ -53,7 +51,6 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WelcomePage,
-    SearchPage,
     ChoosePage,
     TripPage,
     PaymentPage,
