@@ -7,10 +7,32 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>PMT Booking</h3>
-
-
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+<ion-content padding id="welcome">
+    <img src="assets/imgs/logo.png" class="center logo"/>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>Welcome to PMT Booking</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid >
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button full color="success" (click)="signup()">Sign up</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button full color="lightText" (click)="login()">Log in</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col center text-center>
+            <a href="#" full color="lightText" (click)="goToHome()">Continue without signin</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

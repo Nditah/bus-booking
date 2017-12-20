@@ -7,10 +7,84 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Register</h3>
 
+<ion-content padding class="appBackground">
+  <ion-card>
+    <ion-card-header>
+      Registration
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Surname</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.surname"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label stacked>Other Name</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.other_name"></ion-input>
+        </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        <ion-item>
+          <ion-label stacked>Gender</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.sex"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Birth date</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.birth_date"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Phone</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.phone"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Phone-2</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.phone2"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Address</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.address"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>City</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.city"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>State</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.state"></ion-input>
+        </ion-item>
+
+        <ion-input type="hidden" [(ngModel)]="userData.product"></ion-input>
+
+        <ion-item>
+          <ion-label stacked>Next-of-Kin</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.person"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Kin's Phone</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.person_phone"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+
+        <button ion-button full color="success" (click)="signup()">Sign up</button>
+        <a href="#" (click)="login()">Login Page</a>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

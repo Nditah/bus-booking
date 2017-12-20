@@ -20,7 +20,8 @@ import { ContactPage } from '../pages/contact/contact';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { HttpModule } from '@angular/http'; 
 
 
 
@@ -45,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule, 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +67,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
