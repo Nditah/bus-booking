@@ -15,6 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PaymentPage {
 
+    // Payment Details
+    trip = {
+      terminal1: 'Enugu, Okpara Avenue',
+      terminal2: 'Lagos, Lagos',
+      departure: '2018-01-23 09:15',
+      fare: 5400,
+      route: 'Enugu, Okpara Avenue => Lagos, Lagos',
+      schedule: '12051'
+    };
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
