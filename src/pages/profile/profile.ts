@@ -9,7 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-// surname, other_name, sex, birth_date, phone, phone2, email, person, person_phone, product, address, city, state
+ 
   user = {
     coverImage: 'assets/img/background/background-5.jpg',
  /*   photo: 'assets/img/avatar/girl-avatar.png', */
