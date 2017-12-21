@@ -9,18 +9,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
+// surname, other_name, sex, birth_date, phone, phone2, email, person, person_phone, product, address, city, state
   user = {
-    name: 'Cosima Niehaus',
-    profileImage: 'assets/img/avatar/girl-avatar.png',
     coverImage: 'assets/img/background/background-5.jpg',
-    occupation: 'Designer',
-    location: 'Seattle, WA',
-    description: 'Passionate Designer. Recently focusing on developing mobile hybrid apps and web development.',
-    address: '27 King\'s College Cir, Toronto, ON M5S, Canada',
-    phone: '555 555 555',
-    email: 'cosima@niehaus.com',
-    whatsapp: '555 555 555',
+ /*   photo: 'assets/img/avatar/girl-avatar.png', */
+    surname: 'Clement ',
+    other_name: 'Nike',
+    sex: 'F',
+    birth_date: '12 Feb 2001',
+    phone: '080 555 555',
+    phone2: '070 555 555',
+    email: 'kelvin@gmail.com',
+    person: 'Kelvin Clinton',
+    person_phone: '080 555 555',
+    product: 'PMT',
+    address: '27 King\'s College Cir, Onitsha',
+    city: 'Port harcourt',
+    state: 'Rivers',
+    pmt_bonus: '200.0',
+    pmt_credit: '0.0',
+    pmt_credit_max: '500.0'
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

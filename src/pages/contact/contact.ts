@@ -11,16 +11,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ContactPage {
 
   user = {
-    name: 'Cosima Niehaus',
+    name: 'Peace Mass Transit',
     profileImage: 'assets/imgs/girl-avatar.png',
     coverImage: 'assets/imgs/background-5.jpg',
-    occupation: 'Designer',
-    location: 'Seattle, WA',
-    description: 'Passionate Designer. Recently focusing on developing mobile hybrid apps and web development.',
-    address: '27 King\'s College Cir, Toronto, ON M5S, Canada',
-    phone: '555 555 555',
-    email: 'cosima@niehaus.com',
-    whatsapp: '555 555 555',
+    occupation: 'Transport',
+    location: 'Nigeria',
+    description: 'Safe and affordable travelling experience',
+    address: '7 Peace Factory Road, Emene, Enugu, Nigeria',
+    phone: '234 700 732 2362 ',
+    email: 'contact@peacegroup.ng',
+    whatsapp: '234 703 415 7751',
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

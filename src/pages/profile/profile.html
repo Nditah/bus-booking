@@ -6,53 +6,66 @@
     <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
-
+<!--    ,   -->
 <ion-content parallax-header no-bounce class="bg-modal">
   <div class="header-image"></div>
   <div class="main-content" text-wrap text-center>
-    <div class="circular"></div>
-    <h2>{{user.name}}</h2>
-    <p>{{user.occupation}} &bull; {{user.location}}</p>
-    <p class="profile-description">{{user.description}}</p>
+    <!-- <div class="circular"></div> -->
+    <h2>{{user.surname}} &nbsp;  {{user.other_name}} ({{user.sex}}) </h2>
+    <p>{{user.city}} &bull; {{user.state}}</p>
+    <p class="profile-description">{{user.product}} &bull; {{user.address}}</p>
     <hr>
     <ion-list no-lines>
+    <ion-item>
+        <ion-icon name="ribbon" color="primary" item-start></ion-icon>
+        <p>Date of Birth</p>
+        {{user.birth_date}}
+      </ion-item>      
       <ion-item>
         <ion-icon name="mail" color="primary" item-start></ion-icon>
         <p>Email</p>
         {{user.email}}
-        <a button ion-button href="mailto:{{user.email}}" color="primary" item-end medium>Open App</a>
       </ion-item>
       <ion-item>
         <ion-icon item-start name="call" color="danger"></ion-icon>
         <p>Mobile</p>
         {{user.phone}}
-        <a button ion-button href="tel:{{user.phone}}" color="danger" item-end medium>Poke me</a>
       </ion-item>
       <ion-item>
-        <ion-icon item-start name="logo-whatsapp" color="secondary"></ion-icon>
-        <p>Whatsapp</p>
-        {{user.whatsapp}}
-        <a button ion-button color="secondary" item-end medium href="whatsapp://send?text=Hi from ionic&phone=+{{user.phone}}&abid=+{{user.phone}}">Open App</a>
+        <ion-icon item-start name="call" color="danger"></ion-icon>
+        <p>Phone</p>
+        {{user.phone2}}
       </ion-item>
       <ion-item>
         <ion-icon item-start name="pin" color="twitter"></ion-icon>
         <p>{{user.address}}</p>
       </ion-item>
     </ion-list>
-    <h2>Get in touch</h2>
+    <h2>Next-of-Kin</h2>
     <hr>
-    <a href="#" button ion-button block color="linkedin" icon-start>
-      <ion-icon name='logo-linkedin'></ion-icon>
-      LinkedIn
-    </a>
-    <a href="#" button ion-button block color="fb" icon-start>
-      <ion-icon name='logo-facebook'></ion-icon>
-      Facebook
-    </a>
-    <a href="#" button ion-button block color="danger" icon-start>
-      <ion-icon name='logo-youtube'></ion-icon>
-      Youtube
-    </a>
+    <ion-item>
+      <ion-icon name="mail" color="primary" item-start></ion-icon>
+      <p>Name</p>
+      {{user.person}}
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="call" color="danger"></ion-icon>
+      <p>Mobile</p>
+      {{user.person_phone}}
+      <a button ion-button href="tel:{{user.person_phone}}" color="danger" >Flash</a>
+    </ion-item>
+    <h2>Credit</h2>
+    <hr>
+    <ion-item>
+      <ion-icon name="trophy" color="primary" item-start></ion-icon>
+      <p>Bonus</p>
+      {{user.pmt_bonus}}
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="cash" color="danger"></ion-icon>
+      <p>Bill </p>
+      {{user.pmt_credit}}
+    </ion-item>  
   </div>
 
 </ion-content>
