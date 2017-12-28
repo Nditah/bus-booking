@@ -15,14 +15,14 @@
   </ion-list>
 
   <h2>FAQs:</h2>
-	<ion-list>
-      <ion-item *ngFor="let d of accordions; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-        <div>
-          {{d.name}}
-          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
-        </div>
-        <div *ngIf="isGroupShown(i)">{{d.description}}</div>
-      </ion-item>
-    </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let d of accordions; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <div>
+        {{d.name}}
+        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
+      </div>
+      <div *ngIf="isGroupShown(i)">{{d.description}}</div>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

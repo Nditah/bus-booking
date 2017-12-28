@@ -24,4 +24,15 @@ export class AuthServiceProvider {
     });
   }
 
+  getData(credentials, type) {
+    return new Promise((resolve, reject) => {
+      this.http.get(apiUrl + type, JSON.stringify(credentials))
+        .subscribe(res => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
 }

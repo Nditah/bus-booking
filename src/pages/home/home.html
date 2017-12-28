@@ -21,25 +21,31 @@
 
         <ion-item>
           <ion-label stacked>Travelling From</ion-label>
-          <ion-input type="text" placeholder="Departure Terminal" [(ngModel)]="bookingData.terminal1"></ion-input>
+          <ion-select [(ngModel)]="searchingData.terminal1" placeholder="Departure Terminal">
+            <ion-option *ngFor="let from of terminals" [value]="from.id"> {{ from.name }} </ion-option>
+          </ion-select>
         </ion-item>
 
         <ion-item>
           <ion-label stacked>Travelling To</ion-label>
-          <ion-input type="text" placeholder="Arrival Terminal" [(ngModel)]="bookingData.terminal2"></ion-input>
+          <ion-select [(ngModel)]="searchingData.terminal2" placeholder="Arrival Terminal">
+            <ion-option *ngFor="let to of terminals" [value]="to.id"> {{ to.name }} </ion-option>
+          </ion-select>
         </ion-item>
 
         <ion-item>
           <ion-label stacked>Departing On</ion-label>
-          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="bookingData.departing_date"></ion-datetime>
+          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="searchingData.departure" placeholder="Travelling Date"></ion-datetime>
         </ion-item>
 
         <ion-item>
           <ion-label stacked>Travellers</ion-label>
-          <ion-input type="text" placeholder="No. of Seats" [(ngModel)]="bookingData.seats"></ion-input>
+          <ion-select [(ngModel)]="searchingData.seat" placeholder="No. of Seats">
+              <ion-option *ngFor ="let n of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" [value]="n"> {{ n }} Traveller(s) </ion-option>
+            </ion-select>          
         </ion-item>
 
-        <button ion-button full color="success" (click)="search()">Search</button>
+        <button ion-button full color="success" (click)="getSchedule()">Search</button>
       </ion-list>
     </ion-card-content>
   </ion-card>

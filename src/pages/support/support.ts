@@ -14,9 +14,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'support.html',
 })
 export class SupportPage {
-
+  
+  //Slider
   rootPage: any;
   items: Array<{ title: string, page: any }>;
+
+  // Accordion
   shownGroup = null;
 
   toggleGroup(group) {
@@ -26,6 +29,7 @@ export class SupportPage {
       this.shownGroup = group;
     }
   };
+
   isGroupShown(group) {
     return this.shownGroup === group;
   };
@@ -44,7 +48,7 @@ export class SupportPage {
       name: 'What would happen if I missed my Schedule?',
       description: 'Since the end of the Yugoslav wars, Belgrade has attracted steady investment—its graffiti-covered neighborhoods are now full of restaurants and bars. You’ll find hearty platters of ćevapi—smoky sausages without casing—and stuffed somborka peppers at Sokače, paprika-laden kebabs at Tri Šešira, and pan-Latin tapas at Toro. But the biggest draw is the growing craft-beer scene (the city has 37 breweries). Don’t miss the Kabinet Supernova IPA at Prohibicija in the bar-filled Savamala district, as well as Kas’s full-bodied pale ales and Salto’s IPA at Bajloni, set in a 100-year-old brewery space in Cetinjska. —Govind Dhar',
     }
-  ]
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public renderer: Renderer) {
     this.rootPage = SupportPage;

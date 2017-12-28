@@ -28,7 +28,7 @@
 
         <ion-item>
           <ion-label floating>Gender</ion-label>
-          <ion-select [(ngModel)]="userData.sex">
+          <ion-select [(ngModel)]="userData.sex" interface="action-sheet">
             <ion-option value="M">Male</ion-option>
             <ion-option value="F">Female</ion-option>
           </ion-select>
@@ -41,12 +41,12 @@
 
         <ion-item>
           <ion-label floating>Phone</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.phone"></ion-input>
+          <ion-input type="tel" [(ngModel)]="userData.phone"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Phone-2</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.phone2"></ion-input>
+          <ion-input type="tel" [(ngModel)]="userData.phone2"></ion-input>
         </ion-item>
 
         <ion-item>

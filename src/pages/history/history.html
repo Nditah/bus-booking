@@ -10,21 +10,10 @@
 <ion-content padding>
   <h3>Transaction History</h3>
   <ion-list>
-      <ion-item>
-        <ion-icon name="bus" item-start color="primary"></ion-icon>
-        <ion-label>Enugu - Onitsha &nbsp;  2018-03-11 12:45 &nbsp; N1,450 </ion-label>
-        <ion-note item-end>Valid</ion-note>
-      </ion-item>
-      <button ion-item>
-        <ion-icon name="bus" item-start color="default"></ion-icon>
-        <ion-label>Nsukka - Abuja &nbsp;  2018-03-11 12:45 &nbsp; N1,450  </ion-label>
-        <ion-note item-end>Invalid</ion-note>
-      </button>
-      <button ion-item>
-        <ion-icon name="bus" item-start color="secondary"></ion-icon>
-        <ion-label>Lagos - Calabar &nbsp;  2018-03-11 12:45 &nbsp; N1,450 </ion-label>
-        <ion-note item-end>Invalid</ion-note>
-      </button>
-    </ion-list>
- 
+    <ion-item *ngFor="let h of historyDetails" text-wrap>
+      <ion-icon name="bus" item-start color="primary"></ion-icon>
+      <ion-label>{{ h.departure }} &nbsp; {{ h.transtatus }} &nbsp;{{ h.route }} &nbsp;{{ h.transcode }} &nbsp;{{ h.fare }} </ion-label>
+      <ion-note item-end color="primary">{{ h.booking_status }} </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
