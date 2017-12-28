@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
- 
-
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -10,6 +8,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
  
+  url = "http://localhost/dove/booking/PHP-Slim-Restful/api/login.php";
+//  user: string[];
+
   user = {
     coverImage: 'assets/img/background/background-5.jpg',
  /*   photo: 'assets/img/avatar/girl-avatar.png', */
@@ -31,11 +32,13 @@ export class ProfilePage {
     pmt_credit_max: '500.0'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+ 
+
   }
 
 }

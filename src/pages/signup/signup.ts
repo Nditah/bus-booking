@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
-//import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
@@ -11,6 +11,10 @@ import { LoginPage } from '../login/login';
 })
 export class SignupPage {
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SignupPage');
+  }
+  
   responseData: any;
   userData = { "surname": "",
                 "other_name": "",
@@ -28,28 +32,26 @@ export class SignupPage {
                 "state": ""
             };
             
-  constructor(public navCtrl: NavController, public navParams: NavParams ) {
+  constructor(public navCtrl: NavController, public authServiceProvider: AuthServiceProvider) {
   }
  // constructor(public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
-/*
+
   signup() {
+  
     this.authServiceProvider.postData(this.userData, 'signup').then((result) => {
       this.responseData = result;
-      if (this.responseData.userData) {
-        console.log(this.responseData);
-        localStorage.setItem('userData', JSON.stringify(this.responseData));
-        this.navCtrl.push(HomePage);
+      if(this.responseData.userData) {
+          console.log(this.responseData);
+          localStorage.setItem('userData', JSON.stringify(this.responseData));
+          this.navCtrl.push(HomePage);
       }
-      else { console.log("User already exists"); }
+      else { console.log("User already exists" + result); }
     }, (err) => {
       // Error log
     });
-
-  } */
+    
+  } 
 
   login() {
     //Login page link

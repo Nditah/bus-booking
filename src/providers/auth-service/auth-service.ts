@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -8,7 +7,7 @@ let apiUrl = 'http://localhost/dove/booking/PHP-Slim-Restful/api/';
 @Injectable()
 export class AuthServiceProvider {
 
-  constructor(public httpClient: HttpClient, public http: Http) {
+  constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
   }
 
@@ -23,7 +22,6 @@ export class AuthServiceProvider {
           reject(err);
         });
     });
-
   }
 
 }

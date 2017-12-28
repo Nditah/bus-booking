@@ -1,24 +1,49 @@
-<!--
-  Generated template for the ChoosePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Choose</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h3>Choose a bus</h3>
-
-  <p>
-    PMT Home Page. If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Choose</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content parallax-header no-bounce class="bg-modal">
+      <div class="header-image"></div>
+      <div class="main-content" text-wrap text-center>
+        <hr>
+        <ion-list no-lines>
+        <ion-item>
+            <ion-icon name="ribbon" color="primary" item-start></ion-icon>
+            <p>From</p>
+            {{trip.terminal1}}
+          </ion-item>      
+          <ion-item>
+            <ion-icon name="mail" color="primary" item-start></ion-icon>
+            <p>To</p>
+            {{trip.terminal2}}
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call" color="danger"></ion-icon>
+            <p>Route</p>
+            {{trip.route}}
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call" color="danger"></ion-icon>
+            <p>Fare</p>
+            {{trip.fare}}
+          </ion-item>
+        </ion-list>
+        <h2>Pay via</h2>
+        <hr>
+        <a href="#" button ion-button block color="danger" icon-start>
+          <ion-icon name='cash'></ion-icon>
+          InterSwitch Webpay
+        </a>
+        <a href="#" button ion-button block color="energy" icon-start>
+          <ion-icon name='cash'></ion-icon>
+          Flutterwave Rave
+        </a>
+      </div>
+    
+    </ion-content>
+  

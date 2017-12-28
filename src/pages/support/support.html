@@ -7,19 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" color="primary">
       {{item.title}}
     </button>
   </ion-list>
 
-  <h4>FAQs:</h4>
-  <ion-item *ngFor="let accordion of accordions; let i = index" [title]="accordion.name" textColor="#DDD" hasMargin="false" headerColor="#F53D3D" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-    <div *ngIf="isGroupShown(i)">
-      <img [src]="accordion.imageUrl">
-      <p text-wrap>{{accordion.description}}</p>
-    </div>
-  </ion-item>
+  <h2>FAQs:</h2>
+	<ion-list>
+      <ion-item *ngFor="let d of accordions; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+        <div>
+          {{d.name}}
+          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
+        </div>
+        <div *ngIf="isGroupShown(i)">{{d.description}}</div>
+      </ion-item>
+    </ion-list>
 
 </ion-content>
