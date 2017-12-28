@@ -13,24 +13,29 @@
         <hr>
         <ion-list no-lines>
         <ion-item>
-            <ion-icon name="ribbon" color="primary" item-start></ion-icon>
+            <ion-icon name="bus" color="primary" item-start></ion-icon>
             <p>From</p>
-            {{trip.terminal1}}
+            {{paymentData.terminal1}}
           </ion-item>      
           <ion-item>
-            <ion-icon name="mail" color="primary" item-start></ion-icon>
+            <ion-icon name="pin" color="primary" item-start></ion-icon>
             <p>To</p>
-            {{trip.terminal2}}
+            {{paymentData.terminal2}}
           </ion-item>
           <ion-item>
-            <ion-icon item-start name="call" color="danger"></ion-icon>
-            <p>Route</p>
-            {{trip.route}}
+            <ion-icon name="alarm" color="primary" item-start></ion-icon>
+            <p>Departure</p>
+            {{paymentData.departure}}
           </ion-item>
           <ion-item>
-            <ion-icon item-start name="call" color="danger"></ion-icon>
+            <ion-icon name="body" color="primary" item-start></ion-icon>
+            <p>Seat(s)</p>
+            {{paymentData.seat}}
+          </ion-item>
+          <ion-item>
+            <ion-icon name="cash" color="danger" item-start></ion-icon>
             <p>Fare</p>
-            {{trip.fare}}
+            <a button ion-button href="" color="danger"> N {{paymentData.fare}} </a>
           </ion-item>
         </ion-list>
         <h2>Pay via</h2>

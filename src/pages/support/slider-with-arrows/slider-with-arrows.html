@@ -10,6 +10,7 @@
                class="swiper-no-swiping"
                [ngStyle]="{'background' : 'url(' + slide.imageUrl + ')'}">
       <h2>{{slide.title}}</h2>
+      <p>{{slide.body}}</p>
     </ion-slide>
     <!-- Add Pagination -->
     <div *ngIf="currentIndex > 0"

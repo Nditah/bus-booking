@@ -16,13 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TripPage {
 
   // Trip Details
-  trip = {
+  tripData = {
     terminal1: 'Enugu, Okpara Avenue',
     terminal2: 'Lagos, Lagos',
     departure: '2018-01-23 09:15',
     fare: 5400,
     route: 'Enugu, Okpara Avenue => Lagos, Lagos',
-    schedule: '12051'
+    schedule: '12051',
+    seat: ''
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -30,6 +31,10 @@ export class TripPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripPage');
+  }
+
+  logEvent(event) {
+    console.log(event)
   }
 
 }

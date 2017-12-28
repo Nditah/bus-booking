@@ -36,17 +36,17 @@ export class ChoosePage {
 
   // Stored Searching Data
   searchingData = {
-    "terminal1": "",
-    "terminal2": "",
-    "departure": "",
-    "seat": ""
+    "terminal1": "A",
+    "terminal2": "B",
+    "departure": "C",
+    "seat": "D"
   };
 
   // Choose Data
   choosingData = {
     "fare": "5400",
-    "schedule": "2500",
-    "seat": "1"
+    "schedule": "21",
+    "seat": "1,2"
   };
 
   // Response of chosen data. 1 0r 0
@@ -54,8 +54,8 @@ export class ChoosePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {
 
-    this.getSearchingData();
-    this.getScheduleData();
+  //  this.getSearchingData();
+  //  this.getScheduleData();
 
   }
 

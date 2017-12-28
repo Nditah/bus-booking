@@ -8,41 +8,57 @@
 </ion-header>
 
 <ion-content parallax-header no-bounce class="bg-modal">
-    <div class="header-image"></div>
-    <div class="main-content" text-wrap text-center>
-      <hr>
-      <ion-list no-lines>
+  <div class="header-image"></div>
+  <div class="main-content" text-wrap text-center>
+    <hr>
+    <ion-list no-lines>
       <ion-item>
-          <ion-icon name="ribbon" color="primary" item-start></ion-icon>
-          <p>From</p>
-          {{trip.terminal1}}
-        </ion-item>      
-        <ion-item>
-          <ion-icon name="mail" color="primary" item-start></ion-icon>
-          <p>To</p>
-          {{trip.terminal2}}
-        </ion-item>
-        <ion-item>
-          <ion-icon item-start name="call" color="danger"></ion-icon>
-          <p>Route</p>
-          {{trip.route}}
-        </ion-item>
-        <ion-item>
-          <ion-icon item-start name="call" color="danger"></ion-icon>
-          <p>Fare</p>
-          {{trip.fare}}
-        </ion-item>
-      </ion-list>
-      <h2>Pay via</h2>
-      <hr>
-      <a href="#" button ion-button block color="danger" icon-start>
-        <ion-icon name='cash'></ion-icon>
-        InterSwitch Webpay
-      </a>
-      <a href="#" button ion-button block color="energy" icon-start>
-        <ion-icon name='cash'></ion-icon>
-        Flutterwave Rave
-      </a>
-    </div>
-  
-  </ion-content>
+        <ion-icon name="bus" color="primary" item-start></ion-icon>
+        <p>From</p>
+        {{tripData.terminal1}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="pin" color="primary" item-start></ion-icon>
+        <p>To</p>
+        {{tripData.terminal2}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="alarm" color="primary" item-start></ion-icon>
+        <p>Departure</p>
+        {{tripData.departure}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="cash" color="danger" item-start></ion-icon>
+        <p>Fare</p>
+        <a button ion-button href="" color="danger"> N {{tripData.fare}} </a>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="body" color="primary" item-start></ion-icon>
+        <p>Seat</p>
+        {{tripData.seat}}
+      </ion-item>
+    </ion-list>
+    <h2>Terms and Conditions</h2>
+    <hr>
+    <ion-list>
+      <ion-item>
+        <p>Guests are required to check in at least 30 minutes before the estimated time of departure for Boarding. We regret that a five hundred (500) Naira "no show" fee would apply if guests fail to show at the accurate time for boarding or of guests to reschedule ticket(s) if they do not show up at the required boarding time.</p>
+      </ion-item>
+      <ion-item>
+        <p>Should a Guest decide to reschedule trip before planned day or time of travel, Please contact our customer care on 08055091886. </p>
+      </ion-item>
+      <ion-item>
+        <p>We cherish our relationship with all our Guests and have created a window for unused tickets to be reused within a period. Tickets not used to travel or checked in have a validity of one (1) month, as long as the amount paid for the cancelled journey is not less than the cost of the proposed journey.</p>
+      </ion-item>
+      <ion-item>
+        <p>We try our best to maintain our stated departure times. However, we are at liberty to change the scheduled time of departure should we be faced with circumstances beyond our immediate control. In the event that this happens, we will inform you of the new departure time immediately.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Do you Accept the Terms and Conditions?</ion-label>
+        <ion-checkbox ng-model="isAccept" (click)="logEvent($event)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <button ion-button round ion-button icon-right [color]="isAccept ? 'danger' : 'primary'" (click)="book()" [disabled]="isAccept">Continue <ion-icon name="md-arrow-dropright-circle"></ion-icon> </button>
+  </div>
+
+</ion-content>

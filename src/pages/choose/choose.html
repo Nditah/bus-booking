@@ -8,29 +8,48 @@
 </ion-header>
 
 <ion-content parallax-header no-bounce class="bg-modal">
-  <div class="header-image"></div>
   <div class="main-content" text-wrap text-center>
+    <h2>Choose your seat and continue</h2>
     <hr>
-    <ion-list>
-      <ion-item *ngFor="let d of scheduleData; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-        <div>
-          {{d.departure}} {{d.fare}} 
-          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
-        </div>
-        <div *ngIf="isGroupShown(i)">Choose Seats Between 2 and 16 but not in  {{d.seat}} </div>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon name="bus" color="primary" item-start></ion-icon>
+        <p>From</p>
+        {{searchingData.terminal1}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="pin" color="primary" item-start></ion-icon>
+        <p>To</p>
+        {{searchingData.terminal2}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="alarm" color="primary" item-start></ion-icon>
+        <p>Departure</p>
+        {{searchingData.departure}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="cash" color="danger" item-start></ion-icon>
+        <p>Fare</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="body" color="primary" item-start></ion-icon>
+        <p>Seat</p>
       </ion-item>
     </ion-list>
 
-    <h2>Booking Info</h2>
+    <ion-list>
+      <ion-item *ngFor="let d of scheduleData; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+        <div>
+          {{d.departure}} {{d.fare}}
+          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
+        </div>
+        <div *ngIf="isGroupShown(i)">Choose Seats Between 2 and 16 but not in {{d.seat}} </div>
+      </ion-item>
+    </ion-list>
+
     <hr>
-    <a href="#" button ion-button block color="danger" icon-start>
-      <ion-icon name='cash'></ion-icon>
-      InterSwitch Webpay
-    </a>
-    <a href="#" button ion-button block color="energy" icon-start>
-      <ion-icon name='cash'></ion-icon>
-      Flutterwave Rave
-    </a>
+
+    <button ion-button full color="success" (click)="choose()">Continue</button>
   </div>
 
 </ion-content>

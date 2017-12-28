@@ -55,7 +55,7 @@ export class SupportPage {
     this.items = [
       
       {
-        title: 'Walkthrough Booking Tutorial',
+        title: 'Click Here to view steps to book online',
         page: 'SliderWithArrowsPage'
       }
 
