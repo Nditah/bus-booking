@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { App, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ChoosePage } from '../choose/choose';
 
@@ -8,8 +8,9 @@ import { ChoosePage } from '../choose/choose';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  //responseData
-  userDetails: {
+ 
+  //UserData from Storage
+  userDetails = {
     "id": "",
     "token": "",
     "surname": "",
