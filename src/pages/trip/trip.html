@@ -28,16 +28,17 @@
         {{tripData.departure}}
       </ion-item>
       <ion-item>
-        <ion-icon name="cash" color="danger" item-start></ion-icon>
-        <p>Fare</p>
-        <a button ion-button href="" color="danger"> N {{tripData.fare}} </a>
-      </ion-item>
-      <ion-item>
         <ion-icon name="body" color="primary" item-start></ion-icon>
         <p>Seat</p>
         {{tripData.seat}}
       </ion-item>
+      <ion-item>
+        <ion-icon name="cash" color="danger" item-start></ion-icon>
+        <p>Fare</p>
+        <a button ion-button href="" color="danger"> {{tripData.fare | currency : "&#8358;"}} </a>
+      </ion-item>
     </ion-list>
+
     <h2>Terms and Conditions</h2>
     <hr>
     <ion-list>
@@ -55,10 +56,12 @@
       </ion-item>
       <ion-item>
         <ion-label>Do you Accept the Terms and Conditions?</ion-label>
-        <ion-checkbox ng-model="isAccept" (click)="logEvent($event)"></ion-checkbox>
+        <ion-checkbox (ionChange)="acceptTerms()" color="secondary"></ion-checkbox>
       </ion-item>
     </ion-list>
-    <button ion-button round ion-button icon-right [color]="isAccept ? 'danger' : 'primary'" (click)="book()" [disabled]="isAccept">Continue <ion-icon name="md-arrow-dropright-circle"></ion-icon> </button>
+    <button ion-button round large icon-right [color]="isAccept ? 'primary' : 'danger'" (click)="goToPayment()" [disabled]="!(isAccept)">Continue
+      <ion-icon name="md-arrow-dropright-circle"></ion-icon>
+    </button>
   </div>
 
 </ion-content>

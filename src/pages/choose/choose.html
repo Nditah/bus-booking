@@ -29,21 +29,177 @@
       </ion-item>
       <ion-item>
         <ion-icon name="cash" color="danger" item-start></ion-icon>
-        <p>Fare</p>
+        <p>Fare: {{choosingData.fare | currency : "&#8358;"}}</p>
       </ion-item>
       <ion-item>
         <ion-icon name="body" color="primary" item-start></ion-icon>
-        <p>Seat</p>
+        <p>Seat: {{ setToString(choosingData.seat) }} </p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="ios-clock" color="primary" item-start></ion-icon>
+        <p>Schedule: {{choosingData.schedule}} </p>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="ios-checkmark-circle" color="primary" item-start></ion-icon>
+          <p><button ion-button round color="danger"> Occupied </button> <button ion-button round color="primary"> Available </button> <button ion-button round color="secondary"> Selected </button></p>
       </ion-item>
     </ion-list>
 
     <ion-list>
-      <ion-item *ngFor="let d of scheduleData; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+        <ion-list-header>
+           <h3> Choose Bus Schedule and Select Seat(s)</h3>
+          </ion-list-header> 
+      <ion-item *ngFor="let d of scheduleData; let i=index; " text-wrap [ngClass]="{active: isGroupShown(i)}">
         <div>
-          {{d.departure}} {{d.fare}}
-          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" item-end></ion-icon>
+            <ion-list>
+                <ion-item>
+                  <ion-icon name="bus" item-start></ion-icon>
+                    Schedule {{ d + 1}}
+                  <ion-icon name="clock" item-end></ion-icon>
+                </ion-item>
+              </ion-list>
+          Time: {{d.departure | date : "HH:mm"}} &nbsp;&nbsp;&nbsp; Fare: {{d.fare | currency : "&#8358;" }}
+          <button ion-button round color="energy" item-right item-end (click)="toggleGroup(i)"> {{ isGroupShown(i) ? 'Hide' : 'Show' }}</button>
         </div>
-        <div *ngIf="isGroupShown(i)">Choose Seats Between 2 and 16 but not in {{d.seat}} </div>
+        <div *ngIf="isGroupShown(i)" class="item-content">
+          <!-- Choose Seats Between 2 and 16 but not in {{d.seat}} -->
+
+          <!-- bus -->
+ 
+          <ion-grid class="bus">
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                <button ion-button round id="D" class="occupied" disabled> D </button>
+              </ion-col>
+              <ion-col col-3>
+                &nbsp;
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '1'" [class.someClass]="seatOccupied(d.seat, i + '_' + '1') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '1')" [disabled] = "seatOccupied(d.seat, i + '_' + '1') ? true : false" >
+                  1 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '2'" [class.someClass]="seatOccupied(d.seat, i + '_' + '2') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '2')" [disabled] = "seatOccupied(d.seat, i + '_' + '2') ? true : false" >
+                  2 </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '3'" [class.someClass]="seatOccupied(d.seat, i + '_' + '3') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '3')" [disabled] = "seatOccupied(d.seat, i + '_' + '3') ? true : false" >
+                  3 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '4'" [class.someClass]="seatOccupied(d.seat, i + '_' + '4') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '4')" [disabled] = "seatOccupied(d.seat, i + '_' + '4') ? true : false" >
+                  4 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '5'" [class.someClass]="seatOccupied(d.seat, i + '_' + '5') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '5')" [disabled] = "seatOccupied(d.seat, i + '_' + '5') ? true : false" >
+                  5 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '6'" [class.someClass]="seatOccupied(d.seat, i + '_' + '6') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '6')" [disabled] = "seatOccupied(d.seat, i + '_' + '6') ? true : false" >
+                  6 </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '7'" [class.someClass]="seatOccupied(d.seat, i + '_' + '7') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '7')" [disabled] = "seatOccupied(d.seat, i + '_' + '7') ? true : false" >
+                  7 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '8'" [class.someClass]="seatOccupied(d.seat, i + '_' + '8') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '8')" [disabled] = "seatOccupied(d.seat, i + '_' + '8') ? true : false" >
+                  8 </button>
+              </ion-col>
+              <ion-col col-3>
+                &nbsp;
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '9'" [class.someClass]="seatOccupied(d.seat, i + '_' + '9') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '9')" [disabled] = "seatOccupied(d.seat, i + '_' + '9') ? true : false" >
+                  9 </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '10'" [class.someClass]="seatOccupied(d.seat, i + '_' + '10') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '10')" [disabled] = "seatOccupied(d.seat, i + '_' + '10') ? true : false" >
+                  10 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '11'" [class.someClass]="seatOccupied(d.seat, i + '_' + '11') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '11')" [disabled] = "seatOccupied(d.seat, i + '_' + '10') ? true : false" >
+                  11 </button>
+              </ion-col>
+              <ion-col col-3>
+                &nbsp;
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '12'" [class.someClass]="seatOccupied(d.seat, i + '_' + '12') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '12')" [disabled] = "seatOccupied(d.seat, i + '_' + '12') ? true : false" >
+                  12 </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '13'" [class.someClass]="seatOccupied(d.seat, i + '_' + '13') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '13')" [disabled] = "seatOccupied(d.seat, i + '_' + '13') ? true : false" >
+                  13 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '14'" [class.someClass]="seatOccupied(d.seat, i + '_' + '14') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '14')" [disabled] = "seatOccupied(d.seat, i + '_' + '14') ? true : false" >
+                  14 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '15'" [class.someClass]="seatOccupied(d.seat, i + '_' + '15') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '15')" [disabled] = "seatOccupied(d.seat, i + '_' + '15') ? true : false" >
+                  15 </button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button round [id] = "i + '_' + '16'" [class.someClass]="seatOccupied(d.seat, i + '_' + '16') ? 'occupied' : 'available'" (click)="seatClk(i + '_' + '16')" [disabled] = "seatOccupied(d.seat, i + '_' + '16') ? true : false" >
+                  16 </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-12>
+                &nbsp;
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+
+          <!--/. bus -->
+
+        </div>
       </ion-item>
     </ion-list>
 

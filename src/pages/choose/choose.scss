@@ -12,5 +12,31 @@ page-choose {
         // background: #F5F5F5;
         position: relative !important;
     }
+    .item-content {
+        background-color:#ccffcc ;
+      }
+
+    ion-item:hover {
+        background-color: #99ff99 !important;
+    }
+
+    a[disabled], button[disabled], html input[disabled] {
+        cursor: not-allowed;
+        background-color: magenta;
+    }
+
+    .occupied {
+        background-color: magenta !important;
+    }
+
+    .available {
+        background-color: color($colors, primary);
+    }
+
+    .selected {
+        background-color: greenyellow;
+    }
+
+
 
 }
