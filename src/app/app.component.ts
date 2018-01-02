@@ -21,7 +21,7 @@ import { ContactPage } from '../pages/contact/contact';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = WelcomePage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
@@ -30,8 +30,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Welcome', component:	WelcomePage, icon: 'bus'  },
       { title: 'Home', component: HomePage, icon: 'home' },
+      { title: 'Welcome', component:	WelcomePage, icon: 'bus'  },
       { title: 'Choose', component:	ChoosePage, icon: 'checkbox'  },
       { title: 'Trip', component:	TripPage, icon: 'git-compare'  },
       { title: 'Payment', component:	PaymentPage, icon: 'cash'  },
