@@ -19,7 +19,9 @@ import { ContactPage } from '../pages/contact/contact';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { HttpModule } from '@angular/http';  
+import { HttpModule } from '@angular/http';
+import { TerminalProvider } from '../providers/terminal/terminal';
+import { IonicStorageModule, Storage } from '@ionic/storage'; 
 
 
 
@@ -41,7 +43,12 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    Storage,
+    IonicStorageModule.forRoot({
+      name: 'pmtdb',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +69,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    TerminalProvider
   ]
 })
 export class AppModule {}

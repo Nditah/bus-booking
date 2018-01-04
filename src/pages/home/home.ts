@@ -25,7 +25,7 @@ export class HomePage {
     this.navCtrl.push(SignupPage);
     }
 
-  goToHome(){
-      this.navCtrl.push(HomePage);
+  goToWelcome(){
+      this.navCtrl.push(WelcomePage);
       }
 }

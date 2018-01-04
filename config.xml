@@ -85,4 +85,5 @@
     <plugin name="cordova-android-support-gradle-release" spec="^1.1.5">
         <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
     </plugin>
+    <plugin name="cordova-sqlite-storage" spec="^2.1.5" />
 </widget>
