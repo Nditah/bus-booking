@@ -19,13 +19,14 @@ export class HomePage {
 
   login(){
     this.navCtrl.push(LoginPage);
-    }
+  }
   
   signup(){
     this.navCtrl.push(SignupPage);
-    }
+  }
 
   goToWelcome(){
-      this.navCtrl.push(WelcomePage);
-      }
+    this.navCtrl.push(WelcomePage);
+  }
+  
 }

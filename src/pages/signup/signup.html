@@ -11,24 +11,24 @@
 <ion-content padding class="appBackground">
   <ion-card>
     <ion-card-header>
-      Registration
+    <h2> Registration </h2>  
     </ion-card-header>
     <ion-card-content>
       <ion-list>
 
         <ion-item>
           <ion-label floating>Surname</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.surname"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.surname" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Other Name</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.other_name"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.other_name" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Gender</ion-label>
-          <ion-select [(ngModel)]="userData.sex" interface="action-sheet">
+          <ion-select [(ngModel)]="userData.sex" interface="action-sheet" large>
             <ion-option value="M">Male</ion-option>
             <ion-option value="F">Female</ion-option>
           </ion-select>
@@ -36,32 +36,32 @@
 
         <ion-item>
           <ion-label floating>Date of Birth</ion-label>
-          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="userData.birth_date"></ion-datetime>
+          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="userData.birth_date" large></ion-datetime>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Phone</ion-label>
-          <ion-input type="tel" [(ngModel)]="userData.phone"></ion-input>
+          <ion-input type="tel" [(ngModel)]="userData.phone" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Phone-2</ion-label>
-          <ion-input type="tel" [(ngModel)]="userData.phone2"></ion-input>
+          <ion-input type="tel" [(ngModel)]="userData.phone2" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Address</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.address"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.address" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>City</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.city"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.city" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>State</ion-label>
-          <ion-select [(ngModel)]="userData.state">
+          <ion-select [(ngModel)]="userData.state" large>
             <ion-option value='1'>ABIA STATE </ion-option>
             <ion-option value='2'>ADAMAWA STATE </ion-option>
             <ion-option value='3'>AKWA IBOM STATE </ion-option>
@@ -102,26 +102,26 @@
           </ion-select>
         </ion-item>
 
-        <ion-input type="hidden" [(ngModel)]="userData.product"></ion-input>
+        <ion-input type="hidden" [(ngModel)]="userData.product" large></ion-input>
 
         <ion-item>
           <ion-label floating>Next-of-Kin</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.person"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.person" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Kin's Phone</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.person_phone"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.person_phone" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Email</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
+          <ion-input type="text" [(ngModel)]="userData.email" large></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+          <ion-input type="password" [(ngModel)]="userData.password" large></ion-input>
         </ion-item>
 
         <button ion-button full color="success" (click)="signup()">Sign up</button>

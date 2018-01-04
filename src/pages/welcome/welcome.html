@@ -7,47 +7,49 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="appBackground">
-  <h2> {{ userDetails.other_name }} </h2>
-  <h3>Email:  {{ userDetails.email }} </h3>
-  <button ion-button color="primary" (click)="logout()">Logout</button>
+<ion-content padding parallax-header no-bounce>
+  <h2> Hello {{ userDetails.other_name }} </h2>
 
-  <ion-card>
-    <ion-card-header>
-      PMT Booking
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
+  <button ion-button color="primary" (click)="logout()" small>Logout</button>
+  <div class="header-image">
+    <img src="assets/imgs/background-1.jpg">
+  </div>
 
-        <ion-item>
-          <ion-label stacked>Travelling From</ion-label>
-          <ion-select [(ngModel)]="searchingData.terminal1" placeholder="Departure Terminal" large>
-            <ion-option *ngFor="let from of terminals" [value]="from.id"> {{ from.name }} </ion-option>
-          </ion-select>
-        </ion-item>
+  <div class="main-content" text-wrap text-center>
 
-        <ion-item>
-          <ion-label stacked>Travelling To</ion-label>
-          <ion-select [(ngModel)]="searchingData.terminal2" placeholder="Arrival Terminal" large>
-            <ion-option *ngFor="let to of terminals" [value]="to.id"> {{ to.name }} </ion-option>
-          </ion-select>
-        </ion-item>
+    <hr>
+    <h2> PMT Booking </h2>
 
-        <ion-item>
-          <ion-label stacked>Departing On</ion-label>
-          <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="searchingData.departure" placeholder="Travelling Date" large></ion-datetime>
-        </ion-item>
+    <ion-list>
 
-        <ion-item>
-          <ion-label stacked>Travellers</ion-label>
-          <ion-select [(ngModel)]="searchingData.seat" placeholder="No. of Seats" large>
-              <ion-option *ngFor ="let n of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" [value]="n"> {{ n }} Traveller(s) </ion-option>
-            </ion-select>          
-        </ion-item>
+      <ion-item>
+        <ion-label stacked>Travelling From</ion-label>
+        <ion-select [(ngModel)]="searchingData.terminal1" placeholder="Departure Terminal" large>
+          <ion-option *ngFor="let from of terminals" [value]="from.id"> {{ from.name }} </ion-option>
+        </ion-select>
+      </ion-item>
 
-        <button ion-button full color="success" (click)="getSchedule()">Search</button>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+      <ion-item>
+        <ion-label stacked>Travelling To</ion-label>
+        <ion-select [(ngModel)]="searchingData.terminal2" placeholder="Arrival Terminal" large>
+          <ion-option *ngFor="let to of terminals" [value]="to.id"> {{ to.name }} </ion-option>
+        </ion-select>
+      </ion-item>
 
+      <ion-item>
+        <ion-label stacked>Departing On</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="searchingData.departure" placeholder="Travelling Date" large></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Travellers</ion-label>
+        <ion-select [(ngModel)]="searchingData.seat" placeholder="No. of Seats" large>
+          <ion-option *ngFor="let n of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" [value]="n"> {{ n }} Traveller(s) </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-button full color="success" (click)="getSchedule()">Search</button>
+    </ion-list>
+
+  </div>
 </ion-content>

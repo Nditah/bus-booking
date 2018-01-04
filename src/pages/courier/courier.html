@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Courier</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Serial</ion-label>
+      <ion-input type="number" name="serial" [(ngModel)]="shipment.serial" autocomplete="off" maxlength="10" large></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Transact Code</ion-label>
+      <ion-input type="text" name="code" [(ngModel)]="shipment.code" autocomplete="off" autocorrect="off" autocapitalize="on" spellcheck="false" maxlength="10" large></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <div padding>
+    <button ion-button full color="success" (click)="trace()">Trace</button>
+  </div>
+</ion-content>

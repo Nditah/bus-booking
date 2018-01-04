@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://localhost/dove/booking/PHP-Slim-Restful/api/';
+let apiUrl = 'http://192.168.6.61/dove/booking/PHP-Slim-Restful/api/';
 
 @Injectable()
 export class AuthServiceProvider {

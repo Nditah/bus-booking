@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { App, NavController, NavParams } from 'ionic-angular';
+import { App, NavController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { TerminalProvider } from '../../providers/terminal/terminal';
 import { ChoosePage } from '../choose/choose';
 
 
@@ -30,7 +31,6 @@ export class WelcomePage {
     "state": ""
   };
 
-  resTerminalData: any;
   resScheduleData: any;
   searchingData = {
     "terminal1": "",
@@ -39,12 +39,18 @@ export class WelcomePage {
     "seat": ""
   };
 
-  terminals: Array<{ id: string, name: string }>;
-
+  terminals: Array<{ id: number, name: string, address: string, latitude: number, longitude: number, pmtonline: string }>;
 
   userPostData = { "id": "", "token": "" };
 
-  constructor(public navCtrl: NavController, public app: App, public authServiceProvider: AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public app: App, public authServiceProvider: AuthServiceProvider, public terminalProvider: TerminalProvider) {
+    try { // statements to try
+      this.terminals = terminalProvider.getTerminals(); // function could throw exception
+    }
+    catch (e) {
+      console.log(e); // pass exception object to error handler -> your own function
+    }
+
     try {
       if (localStorage.getItem('userData')) {
         const data = JSON.parse(localStorage.getItem('userData'));
@@ -78,7 +84,7 @@ export class WelcomePage {
     }
 
     try { // statements to try
-      this.getTerminals(); // function could throw exception
+    //  this.terminals = terminalProvider.terminalData; // function could throw exception
     }
     catch (e) {
       console.log(e); // pass exception object to error handler -> your own function
@@ -90,20 +96,7 @@ export class WelcomePage {
     console.log(this.userPostData);
   }
 
-  getTerminals() {
-    this.authServiceProvider.getData(1, 'getTerminal').then((result) => {
-      this.resTerminalData = result;
-      if (this.resTerminalData.terminalData) {
-        console.log(this.resTerminalData.terminalData);
-        localStorage.setItem('terminalData', JSON.stringify(this.resTerminalData));
-        this.terminals = this.resTerminalData.terminalData;
-      }
-      else { console.log("Terminals do not exist" + result); }
-    }, (err) => {
-      // Error log
-      console.log("Error has occurred " + err);
-    });
-  }
+
 
   getSchedule() {
     // store the searching parameters // 

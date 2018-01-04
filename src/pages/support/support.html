@@ -8,12 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" color="primary">
-      {{item.title}}
-    </button>
-  </ion-list>
-
+  
   <h2>FAQs:</h2>
   <ion-list>
     <ion-item *ngFor="let d of accordions; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">

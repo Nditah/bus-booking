@@ -14,6 +14,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ContactPage } from '../pages/contact/contact';
+import { TerminalPage } from '../pages/terminal/terminal';
+import { CourierPage } from '../pages/courier/courier';
 
 @Component({
   templateUrl: 'app.html'
@@ -37,9 +39,11 @@ export class MyApp {
       { title: 'Payment', component:	PaymentPage, icon: 'cash'  },
       { title: 'History', component:	HistoryPage, icon: 'book'  },
       { title: 'Support', component:	SupportPage, icon: 'help-circle'  },
-      { title: 'Profile', component:	ProfilePage, icon: 'contact'  },
-      { title: 'Login', component:	LoginPage, icon: 'download'  },
+      { title: 'Profile', component:	ProfilePage, icon: 'person'  },
+      { title: 'Login', component:	LoginPage, icon: 'log-in'  },
       { title: 'Signup', component:	SignupPage, icon: 'create'  },
+      { title: 'Terminals', component:	TerminalPage, icon: 'pin' },
+      { title: 'Courier', component:	CourierPage, icon: 'mail' },
       { title: 'Contact', component:	ContactPage, icon: 'call'  }
             
     ];

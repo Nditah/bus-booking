@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
-/**
- * Generated class for the HistoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -31,7 +25,13 @@ export class HistoryPage {
       this.userPostData.token = this.userDetails.token;
     }
 
-    this.getHistory();
+    
+    try { 
+      this.getHistory();
+    }
+    catch (e) {
+      console.log(e); 
+    }
     /*
     this.historyDetails = [
       { "transcode": "XOHT23", "transtatus": "PENDING", "fare":"1500","booking_status":"OK", "departure": "2018-03-11 12:45", "route": "Lagos -> Abuja"  },
@@ -56,6 +56,7 @@ export class HistoryPage {
       else { console.log("User does not exist" + result); }
     }, (err) => {
       // Error log
+      throw err;
     });
   }
 

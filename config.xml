@@ -86,4 +86,5 @@
         <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="^2.1.5" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
 </widget>

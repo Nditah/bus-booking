@@ -16,9 +16,7 @@ export class LoginPage {
   }
 
   responseData: any;
-  userData = { "username": "",
-                "password": ""
-            };
+  userData = { "username": "", "password": "" };
             
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {
   }

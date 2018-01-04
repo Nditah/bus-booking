@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { MyApp } from './app.component';
 
 import { ChoosePage } from '../pages/choose/choose';
@@ -15,6 +15,8 @@ import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ContactPage } from '../pages/contact/contact';
+import { TerminalPage } from '../pages/terminal/terminal';
+import { CourierPage } from '../pages/courier/courier';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,13 +40,14 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
     ProfilePage,
     LoginPage,
     SignupPage,
-    ContactPage
+    ContactPage,
+    TerminalPage,
+    CourierPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    Storage,
     IonicStorageModule.forRoot({
       name: 'pmtdb',
          driverOrder: ['indexeddb', 'sqlite', 'websql']
@@ -63,11 +66,14 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
     ProfilePage,
     LoginPage,
     SignupPage,
-    ContactPage
+    ContactPage,
+    TerminalPage,
+    CourierPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     TerminalProvider

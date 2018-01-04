@@ -7,31 +7,29 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content parallax-header no-bounce class="bg-modal">
-  <div class="header-image"></div>
+<ion-content parallax-header no-bounce>
+  <div class="header-image"><img src="assets/imgs/background-2.jpg"></div>
   <div class="main-content" text-wrap text-center>
-    <div class="circular"></div>
-    <hr>
-    <ion-list no-lines>
 
-    </ion-list>
-    <ion-grid >
-        <ion-row>
-          <ion-col center text-center>
-            <button ion-button full color="success" (click)="signup()">Sign up</button>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col center text-center>
-            <button ion-button full color="lightText" (click)="login()">Log in</button>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col center text-center>
-              <a href="#" full color="lightText" (click)="goToWelcome()">Continue without signin</a>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <hr>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button full color="success" (click)="signup()">Sign up</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button full color="lightText" (click)="login()">Log in</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col center text-center>
+          <a href="#" full color="lightText" (click)="goToWelcome()">Continue without signin</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
   </div>
 

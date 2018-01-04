@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Storage } from '@ionic/storage'; 
+import { Storage } from '@ionic/storage';
+import { TerminalProvider } from '../../providers/terminal/terminal';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
@@ -9,47 +11,60 @@ import { Storage } from '@ionic/storage';
 })
 export class TerminalPage {
 
-  private storage: Storage;
+  // Accordion
+  shownGroup = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ) {
+  toggleGroup(group) {
+    if (this.isGroupShown(group)) {
+      this.shownGroup = null;
+    } else {
+      this.shownGroup = group;
+    }
+  };
+
+  isGroupShown(group) {
+    return this.shownGroup === group;
+  };
+
+  terminals: Array<{ id: number, name: string, address: string, latitude: number, longitude: number, pmtonline: string }>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public terminalProvider: TerminalProvider, private socialSharing: SocialSharing) {
+    try { // statements to try
+      this.terminals = terminalProvider.getTerminals(); // function could throw exception
+    }
+    catch (e) {
+      console.log(e); // pass exception object to error handler -> your own function
+    }
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TerminalPage');
   }
 
-
-
-//To open a database:
-dbOpen(){
-  document.addEventListener('deviceready', function () {
- var  db = window.sqlitePlugin.openDatabase({ name: 'pmtdb', location: 'default', androidDatabaseImplementation: 2 });
-  });
-}
-
-// To populate a database using the SQL batch API:
-terminalPutAll() {
-  var  db = window.sqlitePlugin.openDatabase({ name: 'pmtdb', location: 'default', androidDatabaseImplementation: 2 });
-  db.sqlBatch([
-    'CREATE TABLE IF NOT EXISTS terminal (id, name, state)',
-    ['INSERT INTO terminal VALUES (?,?,?)', [1, 'Adamawa', 101]],
-    ['INSERT INTO terminal VALUES (?,?,?)', [2, 'Lagos', 202]],
-  ], function () {
-    console.log('Populated database OK');
-  }, function (error) {
-    console.log('SQL batch ERROR: ' + error.message);
-  });
-}
-
-
-// To check the data using the single SQL statement API:
-terminalGetAll() {
-  db.executeSql('SELECT count(*) AS mycount FROM terminal', [], function (rs) {
-    console.log('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
-  }, function (error) {
-    console.log('SELECT SQL statement ERROR: ' + error.message);
-  });
-}	
+  //Sharing
+  smsShare() {
+    this.socialSharing.shareViaSMS("shareViaSMS", "mobile-no").then(() => {
+      console.log("shareViaSMS: Success");
+    }).catch(() => {
+      console.error("shareViaSMS: failed");
+    });
+  }
   
-
+/*
+  whatsappShare() {
+    this.socialSharing.shareViaWhatsApp("shareViaWhatsApp", teimage, teUrl).then(() => {
+      console.log("shareViaWhatsApp: Success");
+    }).catch(() => {
+      console.error("shareViaWhatsApp: failed");
+    });
+  }
+  facebookShare() {
+    this.socialSharing.shareViaFacebook("shareViaFacebook", teimage, teUrl).then(() => {
+      console.log("shareViaFacebook: Success");
+    }).catch(() => {
+      console.error("shareViaFacebook: failed");
+    });
+  }
+  */
 }

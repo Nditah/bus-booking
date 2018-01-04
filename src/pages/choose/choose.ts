@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { TerminalProvider } from '../../providers/terminal/terminal';
 import { TripPage } from '../trip/trip';
 
 @IonicPage()
@@ -53,11 +54,12 @@ export class ChoosePage {
   // Response of chosen data. 1 0r 0
   resChosenData: any;
 
+  terminals: Array<{ id: string, name: string, address: string, latitude: number, longitude: number, pmtonline: string }>;
 
   // Seat  
   seatClass = "available"; // Seat Status available, selected, occupied
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider, public terminalProvider: TerminalProvider ) { 
 
     try { // statements to try
       this.getSearchingData(); // function could throw exception
@@ -79,24 +81,14 @@ export class ChoosePage {
     console.log('ionViewDidLoad ChoosePage');
   }
 
-  terminalName(terminalMuiltiArray, terminalId) {
-    for (var i = 0; i < terminalMuiltiArray.length; i++) {
-      // This if statement depends on the format of your array
-      if (terminalMuiltiArray[i]["id"] == terminalId) {
-        return terminalMuiltiArray[i]["name"];   // Found it
-      }
-    }
-  }
 
   getSearchingData() {
-    if (localStorage.getItem('searchingData') && localStorage.getItem('terminalData')) {
+    if (localStorage.getItem('searchingData')) {
       const data = JSON.parse(localStorage.getItem('searchingData'));
       let searchingDetails = data.searchingData;
-      const term = JSON.parse(localStorage.getItem('terminalData'));
-      let terminalDetails = term.terminalData;
 
-      this.searchingData.terminal1 = this.terminalName(terminalDetails, searchingDetails.terminal1);
-      this.searchingData.terminal2 = this.terminalName(terminalDetails, searchingDetails.terminal2);
+      this.searchingData.terminal1 = this.terminalProvider.getTerminal(searchingDetails.terminal1)["name"];
+      this.searchingData.terminal2 = this.terminalProvider.getTerminal(searchingDetails.terminal2)["name"];
       this.searchingData.departure = searchingDetails.departure;
       this.searchingData.seat = searchingDetails.seat;
     }

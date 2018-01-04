@@ -1,4 +1,4 @@
-These are Cordova resources. You can replace icon.png and splash.png and run
+These are Cordova resources. You can replace icon.png (1024 x 1024px) and splash.png (2732 x 2732px) and run
 `ionic cordova resources` to generate custom icons and splash screens for your
 app. See `ionic cordova resources --help` for details.
 
