@@ -65,14 +65,4 @@ export class TerminalProvider {
     }
   }
 
-  terminalName(terminalId) {
-    for (var i = 0; i < this.terminals.length; i++) {
-      // This if statement depends on the format of your array
-      if (this.terminals[i]["id"] == terminalId) {
-        return this.terminals[i]["name"];   // Found it
-      }
-    }
-  }
-
-
 }

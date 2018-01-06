@@ -23,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from '@angular/http';
 import { TerminalProvider } from '../providers/terminal/terminal';
-import { IonicStorageModule, Storage } from '@ionic/storage'; 
+import { IonicStorageModule, Storage } from '@ionic/storage';
+import { SettingProvider } from '../providers/setting/setting'; 
 
 
 
@@ -76,7 +77,8 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    TerminalProvider
+    TerminalProvider,
+    SettingProvider
   ]
 })
 export class AppModule {}
