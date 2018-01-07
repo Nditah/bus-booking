@@ -1,33 +1,47 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content parallax-header bounce class="bg-modal">
-  <div class="header-image"><img src="assets/imgs/background-2.jpg"></div>
-  <div class="main-content" text-wrap text-center>
-    <ion-list>
-      <ion-list-header>
-        <h2>Sign-in</h2>
-      </ion-list-header>
+<ion-content class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <ion-header>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <ion-slides #slider class="content-slider" direction="vertical">
 
-      <ion-item>
-        <ion-label color="primary" floating>Email or Phone</ion-label>
-        <ion-input type="text" name="username" [(ngModel)]="userData.username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="50" large></ion-input>
-      </ion-item>
+    <!-- Login -->
+    <ion-slide class="zoom swiper-no-swiping">
+      <ion-slides #innerSlider class="content-slider">
+        <ion-slide class="swiper-no-swiping">
+          <div style="padding: 20% 32px 32px 32px">
+            <ion-item>
+              <ion-label floating>Email or Phone</ion-label>
+              <ion-input type="text" name="username" [(ngModel)]="userData.username" autocomplete="off" autocorrect="off" autocapitalize="off"
+                spellcheck="false" maxlength="50" large></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="userData.password" autocomplete="off" autocorrect="off" autocapitalize="off"
+                spellcheck="false" maxlength="20" large></ion-input>
+            </ion-item>
+            <button ion-button block round (click)="login()" color="light" class="login-button">Login</button>
+            <button ion-button clear (click)="slideNext()" color="light" class="forgot-button">FORGOT PASSWORD?</button>
+          </div>
+          <button ion-button clear (click)="goToSignup()" class="slide-button position-bottom">GO TO SIGNUP
+            <ion-icon name="arrow-down"></ion-icon>
+          </button>
+        </ion-slide>
+        <!-- Forgotten Password -->
+        <ion-slide class="swiper-no-swiping">
+          <div style="padding: 20% 32px 32px 32px">
+            <ion-item>
+              <ion-label floating>E-mail</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <button ion-button block round (click)="resetPassword()" color="light" class="login-button">RESET PASSWORD</button>
+            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button">
+              <ion-icon name="arrow-back"></ion-icon> GO BACK</button>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-slide>
 
-      <ion-item>
-        <ion-label color="primary" floating>Password</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="userData.password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="20" large></ion-input>
-      </ion-item>
-
-      <button ion-button full color="success" (click)="login()">Login</button>
-      <a href="#" (click)="signup()">Register</a>
-    </ion-list>
-
-  </div>
+  </ion-slides>
 </ion-content>

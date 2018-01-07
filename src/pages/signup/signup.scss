@@ -1,3 +1,60 @@
 page-signup {
 
+    $base-color: rgb(24, 72, 90);
+    // Fullscreen centered image background
+    ion-content {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-color: transparent;
+    }
+
+    span,
+    p,
+    h3 {
+      color: white;
+    }
+
+    // Input items
+    ion-label,
+    .input-has-focus {
+      color: #fff !important;
+    }
+
+    ion-item {
+      border-radius: 3px !important;
+      padding-right: 16px !important;
+      margin-bottom: 5px !important;
+      color: #fff !important;
+      background-color: transparent !important;
+      font-size: 0.9em;
+    }
+
+     ::-webkit-input-placeholder {
+      color: white !important;
+    }
+
+    .item-inner {
+      border-bottom: 2px solid white !important;
+      box-shadow: none !important;
+    }
+    
+    .signup-button {
+      width: 100%;
+      max-width: 40rem;
+      height: 50px;
+      font-size: 1.2em;
+      span {
+        color: $base-color !important;
+      }
+    }
+    .login-button {
+        font-weight: bold;
+        float: right;
+        ion-icon {
+          padding-left: 10px;
+          font-size: 2.2rem;
+        }
+      }
+      
 }

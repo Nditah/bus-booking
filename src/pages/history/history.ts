@@ -17,20 +17,21 @@ export class HistoryPage {
   historyDetails: Array<{ transcode: string, transtatus: string, fare: string, booking_status: string, departure: string, route: string }>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {
-    if (localStorage.getItem('userData')) {
-      const data = JSON.parse(localStorage.getItem('userData'));
-      this.userDetails = data.userData;
 
-      this.userPostData.id = this.userDetails.id;
-      this.userPostData.token = this.userDetails.token;
-    }
+    try {
 
-    
-    try { 
+      if (localStorage.getItem('userData')) {
+        const data = JSON.parse(localStorage.getItem('userData'));
+        this.userDetails = data.userData;
+
+        this.userPostData.id = this.userDetails.id;
+        this.userPostData.token = this.userDetails.token;
+      }
+
       this.getHistory();
     }
     catch (e) {
-      console.log(e); 
+      console.log(e);
     }
     /*
     this.historyDetails = [

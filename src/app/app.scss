@@ -15,12 +15,22 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// class of ion-content
+.home-background {
+    background-image: url('../assets/img/background-1.jpg');
+    -webkit-background-image: url('../assets/img/background-1.jpg');
+      background-position: center center;
+      background-size: cover; // contain
+      background-repeat: no-repeat;
+      z-index: -1;
+  }
 
 .header-image {
     background-image: url(../assets/imgs/background-2.jpg);
-    height: 30vh;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     background-position: center center;
+    /*height: 30vh; */
     position: relative;
     z-index: -1;
 }
@@ -29,11 +39,11 @@
     margin-left: 10px;
     margin-right: 10px;
     padding: 20px;
-    background-color: white;
+    /* background-color: white; */
+    background-color: transparent;
     -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
-    // background: #F5F5F5;
     position: relative !important;
 }
 .circular {

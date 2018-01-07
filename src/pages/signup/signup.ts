@@ -11,6 +11,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 })
 export class SignupPage {
 
+  public backgroundImage = 'assets/imgs/background-3.jpg';
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
@@ -53,8 +54,7 @@ export class SignupPage {
     
   } 
 
-  login() {
-    //Login page link
+  goToLogin() {
     this.navCtrl.push(LoginPage);
   }
 

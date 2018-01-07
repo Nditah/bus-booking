@@ -7,30 +7,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content parallax-header no-bounce>
-  <div class="header-image"><img src="assets/imgs/background-2.jpg"></div>
-  <div class="main-content" text-wrap text-center>
+<ion-content class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <br/>
+  <br/>
+  <div padding>
+    <img class="logo" src="assets/imgs/logo.png" />
+    <div class="main-content" style="padding: 20% 32px 32px 32px" text-wrap text-center>
 
-    <hr>
+      <hr>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col center text-center>
-          <button ion-button full color="success" (click)="signup()">Sign up</button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col center text-center>
-          <button ion-button full color="lightText" (click)="login()">Log in</button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col center text-center>
-          <a href="#" full color="lightText" (click)="goToWelcome()">Continue without signin</a>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button round color="light" class="login-button" (click)="goToLogin()">SIGN IN</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button round color="light" class="login-button" (click)="goToSignup()">SIGN UP</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col center text-center>
+            <button ion-button clear (click)="goToWelcome()" color="light" class="continue-button">Continue without login?</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
+    </div>
   </div>
-
 </ion-content>

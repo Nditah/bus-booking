@@ -10,6 +10,8 @@ import { WelcomePage } from '../welcome/welcome';
 })
 export class HomePage {
 
+  public backgroundImage = 'assets/imgs/background-1.jpg';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -17,11 +19,11 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
-  login(){
+  goToLogin(){
     this.navCtrl.push(LoginPage);
   }
   
-  signup(){
+  goToSignup(){
     this.navCtrl.push(SignupPage);
   }
 
